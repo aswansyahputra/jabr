@@ -1,0 +1,14 @@
+Package: jabr
+Title: Jabr - Open Data Jawa Barat
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Muhammad Aswan",
+           family = "Syahputra",
+           role = c("aut", "cre"),
+           email = "muhammadaswansyahputra@gmail.com")
+Description: Easily access and parse data from Open Data Jawa Barat into R.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    ckanr

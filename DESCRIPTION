@@ -12,3 +12,5 @@ Encoding: UTF-8
 LazyData: true
 Imports: 
     ckanr
+URL: https://github.com/aswansyahputra/jabr
+BugReports: https://github.com/aswansyahputra/jabr/issues

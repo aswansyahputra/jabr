@@ -42,6 +42,8 @@ pdrb_adhk <-
   dplyr::slice(1:5) %>% 
   jabr_fetch()
 
+pdrb_adhk
+
 # You can then run `tidyr::unnest()` to expand the dataset
 pdrb_adhk %>% 
   tidyr::unnest(dataset)

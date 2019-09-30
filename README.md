@@ -48,6 +48,16 @@ pdrb_adhk <-
   dplyr::slice(1:5) %>% 
   jabr_fetch()
 
+pdrb_adhk
+#> # A tibble: 5 x 2
+#>   title                                       dataset          
+#>   <chr>                                       <list>           
+#> 1 PDRB ADHK di Provinsi Jawa Barat Tahun 2013 <df[,5] [27 × 5]>
+#> 2 PDRB ADHK di Provinsi Jawa Barat Tahun 2014 <df[,5] [27 × 5]>
+#> 3 PDRB ADHK di Provinsi Jawa Barat Tahun 2015 <df[,5] [27 × 5]>
+#> 4 PDRB ADHK di Provinsi Jawa Barat Tahun 2016 <df[,5] [27 × 5]>
+#> 5 PDRB ADHK di Provinsi Jawa Barat Tahun 2017 <df[,5] [27 × 5]>
+
 # You can then run `tidyr::unnest()` to expand the dataset
 pdrb_adhk %>% 
   tidyr::unnest(dataset)

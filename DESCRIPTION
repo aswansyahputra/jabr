@@ -6,7 +6,7 @@ Authors@R:
            family = "Syahputra",
            role = c("aut", "cre"),
            email = "muhammadaswansyahputra@gmail.com")
-Description: Easily access and parse data from Open Data Jawa Barat into R.
+Description: Easily access and fetch data from Open Data Jawa Barat into R.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

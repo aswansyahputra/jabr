@@ -1,0 +1,49 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# jabr
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of jabr is to browse, list, and fetch dataset from Open Data Jawa Barat right from R.
+
+## Installation
+
+You can install the released version of jabr from [GitHub](https://github.com/aswansyahputra/jabr) with:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("aswansyahputra/jabr")
+```
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(jabr)
+
+(x <- jabr_list_dataset())
+
+pdrb_adhk <- 
+  x %>% 
+  dplyr::slice(1:5) %>% 
+  jabr_fetch()
+
+# You can then run `tidyr::unnest()` to expand the dataset
+pdrb_adhk %>% 
+  tidyr::unnest(dataset)
+```
+

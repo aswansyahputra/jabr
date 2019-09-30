@@ -11,6 +11,12 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
-    ckanr
+    ckanr,
+    rappdirs,
+    dplyr,
+    tidyr,
+    tibble,
+    magrittr
 URL: https://github.com/aswansyahputra/jabr
 BugReports: https://github.com/aswansyahputra/jabr/issues
+RoxygenNote: 6.1.1

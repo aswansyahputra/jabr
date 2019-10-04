@@ -1,6 +1,6 @@
 Package: jabr
 Title: Jabr - Open Data Jawa Barat
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: 
     person(given = "Muhammad Aswan",
            family = "Syahputra",

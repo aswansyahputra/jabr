@@ -4,18 +4,20 @@
 #'
 #' @param update (logical) Whether to update the dataset list.
 #'
+#' @importFrom rlang .data
 #' @importFrom rappdirs user_cache_dir
 #' @importFrom ckanr package_list_current
 #' @importFrom dplyr select transmute
 #' @importFrom tidyr unnest
 #'
+#' @return A tibble.
+#'
 #' @export
 jabr_list_dataset <- function(update = FALSE) {
-  jabr_cache_dir <- rappdirs::user_cache_dir("jabr")
+  jabr_cache_dir <- user_cache_dir("jabr")
 
   if (!file.exists(file.path(jabr_cache_dir, "jabr_data.rda")) |
-      update) {
-
+    update) {
     if (!dir.exists(jabr_cache_dir)) {
       message("Preparing the database, please wait...")
       dir.create(jabr_cache_dir)
@@ -26,15 +28,17 @@ jabr_list_dataset <- function(update = FALSE) {
     }
 
     jabr_data <-
-      ckanr::package_list_current(as = "table",
-                                  limit = 9999,
-                                  url = "http://data.jabarprov.go.id") %>%
-      dplyr::select(resources, author) %>%
-      tidyr::unnest(resources) %>%
-      dplyr::transmute(
-        title = name,
-        provider = author,
-        last_updated = as.Date(cache_last_updated),
+      package_list_current(
+        as = "table",
+        limit = 9999,
+        url = "http://data.jabarprov.go.id"
+      ) %>%
+      select(.data$resources, .data$author) %>%
+      unnest(.data$resources) %>%
+      transmute(
+        title = .data$name,
+        provider = .data$author,
+        last_updated = as.Date(.data$cache_last_updated),
         url
       )
 
@@ -44,6 +48,4 @@ jabr_list_dataset <- function(update = FALSE) {
   load(file = file.path(jabr_cache_dir, "jabr_data.rda"))
 
   return(jabr_data)
-
 }
-

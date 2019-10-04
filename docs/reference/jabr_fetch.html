@@ -121,7 +121,7 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>The dataset list (output from <code><a href='jabr_list_dataset.html'>jabr::jabr_list_dataset()</a></code>). It support single row (single data) and multiple rows (multiple data).</p></td>
+      <td><p>The dataset list (output from <code><a href='jabr_list_dataset.html'>jabr_list_dataset()</a></code>). It support single row (single data) and multiple rows (multiple data).</p></td>
     </tr>
     <tr>
       <th>keep_title</th>
@@ -129,16 +129,20 @@
     </tr>
     <tr>
       <th>as</th>
-      <td><p>Applicable if <code>x</code> has multiple rows. In <code>as = "table"</code> the fetched datasets will be saved in "dataset" column with list-column type where you can run <code><a href='https://tidyr.tidyverse.org/reference/nest.html'>tidyr::unnest()</a></code> afterwards. Otherwise the fetched datasets will be saved as list.</p></td>
+      <td><p>Applicable if <code>x</code> has multiple rows. In <code>as = "table"</code> the fetched datasets will be saved in "dataset" column with list-column type where you can run <code>unnest()</code> afterwards. Otherwise the fetched datasets will be saved as list.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A tibble or list of tibble.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#value">Value</a></li>
     </ul>
 
   </div>

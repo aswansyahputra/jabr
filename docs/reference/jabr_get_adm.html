@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>List Dataset — jabr_list_dataset • jabr</title>
+<title>Get administrative area — jabr_get_adm • jabr</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="List Dataset — jabr_list_dataset" />
-<meta property="og:description" content="List the dataset available at Open Data Jawa Barat." />
+<meta property="og:title" content="Get administrative area — jabr_get_adm" />
+<meta property="og:description" content="List the administrative area of Jawa Barat." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -105,23 +105,27 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>List Dataset</h1>
-    <small class="dont-index">Source: <a href='https://github.com/aswansyahputra/jabr/blob/master/R/jabr_list_dataset.R'><code>R/jabr_list_dataset.R</code></a></small>
-    <div class="hidden name"><code>jabr_list_dataset.Rd</code></div>
+    <h1>Get administrative area</h1>
+    <small class="dont-index">Source: <a href='https://github.com/aswansyahputra/jabr/blob/master/R/jabr_get_adm.R'><code>R/jabr_get_adm.R</code></a></small>
+    <div class="hidden name"><code>jabr_get_adm.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>List the dataset available at Open Data Jawa Barat.</p>
+    <p>List the administrative area of Jawa Barat.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>jabr_list_dataset</span>(<span class='kw'>update</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>jabr_get_adm</span>(<span class='no'>level</span>, <span class='no'>code_bps</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>update</th>
-      <td><p>(logical) Whether to update the dataset list.</p></td>
+      <th>level</th>
+      <td><p>Level of administrative division. Valid values are "subdisctrict" for Kecamatan and "village" for Desa/Kelurahan.</p></td>
+    </tr>
+    <tr>
+      <th>code_bps</th>
+      <td><p>BPS code of the upper administrative division. To get "subdistrict" level area, you have to supply the BPS code of the district (Kota/Kabupaten). To get "village" level area, you have to supply the BPS code of the subdistrict (Kecamatan).</p></td>
     </tr>
     </table>
 

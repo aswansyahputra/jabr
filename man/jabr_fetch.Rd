@@ -7,11 +7,14 @@
 jabr_fetch(x, keep_title = TRUE, as = "table")
 }
 \arguments{
-\item{x}{The dataset list (output from \code{jabr::jabr_list_dataset()}). It support single row (single data) and multiple rows (multiple data).}
+\item{x}{The dataset list (output from \code{jabr_list_dataset()}). It support single row (single data) and multiple rows (multiple data).}
 
 \item{keep_title}{Whether to keep the dataset title in result. If the result is a table, the title is saved in "title" column. If the result is a list, the title is saved as list name.}
 
-\item{as}{Applicable if \code{x} has multiple rows. In \code{as = "table"} the fetched datasets will be saved in "dataset" column with list-column type where you can run \code{tidyr::unnest()} afterwards. Otherwise the fetched datasets will be saved as list.}
+\item{as}{Applicable if \code{x} has multiple rows. In \code{as = "table"} the fetched datasets will be saved in "dataset" column with list-column type where you can run \code{unnest()} afterwards. Otherwise the fetched datasets will be saved as list.}
+}
+\value{
+A tibble or list of tibble.
 }
 \description{
 Download and parse the dataset available at Open Data Jawa Barat into R.

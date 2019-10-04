@@ -9,6 +9,9 @@ jabr_list_dataset(update = FALSE)
 \arguments{
 \item{update}{(logical) Whether to update the dataset list.}
 }
+\value{
+A tibble.
+}
 \description{
 List the dataset available at Open Data Jawa Barat.
 }

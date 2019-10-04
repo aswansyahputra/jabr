@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>List Dataset — jabr_list_dataset • jabr</title>
+<title>Administrative district of Jawa Barat — jabr_district • jabr</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="List Dataset — jabr_list_dataset" />
-<meta property="og:description" content="List the dataset available at Open Data Jawa Barat." />
+<meta property="og:title" content="Administrative district of Jawa Barat — jabr_district" />
+<meta property="og:description" content="A list of district area (Kota/Kabupaten) in Jawa Barat." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -105,36 +105,33 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>List Dataset</h1>
-    <small class="dont-index">Source: <a href='https://github.com/aswansyahputra/jabr/blob/master/R/jabr_list_dataset.R'><code>R/jabr_list_dataset.R</code></a></small>
-    <div class="hidden name"><code>jabr_list_dataset.Rd</code></div>
+    <h1>Administrative district of Jawa Barat</h1>
+    <small class="dont-index">Source: <a href='https://github.com/aswansyahputra/jabr/blob/master/R/data.R'><code>R/data.R</code></a></small>
+    <div class="hidden name"><code>jabr_district.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>List the dataset available at Open Data Jawa Barat.</p>
+    <p>A list of district area (Kota/Kabupaten) in Jawa Barat.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>jabr_list_dataset</span>(<span class='kw'>update</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='no'>jabr_district</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>update</th>
-      <td><p>(logical) Whether to update the dataset list.</p></td>
-    </tr>
-    </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble.</p>
+    <p>A tibble with 27 rows and 4 columns.</p><dl class='dl-horizontal'>
+  <dt>name_bps</dt><dd><p>Name of the area according to BPS</p></dd>
+  <dt>code_bps</dt><dd><p>Code of the area according to BPS</p></dd>
+  <dt>name_kemendagri</dt><dd><p>Name of the area according to KEMENDAGRI</p></dd>
+  <dt>code_kemendagri</dt><dd><p>Code of the area according to KEMENDAGRI</p></dd>
+
+</dl>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
+      <li><a href="#format">Format</a></li>
     </ul>
 
   </div>

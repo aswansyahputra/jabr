@@ -31,15 +31,16 @@ jabr_get_adm <- function(level, code_bps) {
   }
 
   level <- switch(level,
-                  subdistrict = "kecamatan",
-                  village = "desa")
+    subdistrict = "kecamatan",
+    village = "desa"
+  )
 
   glue("https://sig-dev.bps.go.id/restBridging/getwilayahperiode/level/{level}/parent/{code_bps}/periode/20181") %>%
-    GET %>%
+    GET() %>%
     content() %>%
     transpose() %>%
     as_tibble() %>%
-    mutate_all(~ unlist(.x)) %>%
+    mutate_all(unlist) %>%
     distinct(.data$kode_bps, .keep_all = TRUE) %>%
     select(
       name_bps = .data$nama_bps,

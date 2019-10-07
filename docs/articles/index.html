@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Fetch dataset — jabr_fetch • jabr</title>
+<title>Articles • jabr</title>
 
 
 <!-- jquery -->
@@ -35,9 +35,7 @@
 
 
 
-<meta property="og:title" content="Fetch dataset — jabr_fetch" />
-<meta property="og:description" content="Download and parse the dataset available at Open Data Jawa Barat into R." />
-<meta name="twitter:card" content="summary" />
+<meta property="og:title" content="Articles" />
 
 
 
@@ -56,7 +54,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-topic">
+    <div class="container template-article-index">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -84,6 +82,18 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/jabar_disaster.html">Prevalence of Disaster in Jawa Barat</a>
+    </li>
+  </ul>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -105,46 +115,17 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Fetch dataset</h1>
-    <small class="dont-index">Source: <a href='https://github.com/aswansyahputra/jabr/blob/master/R/jabr_fetch.R'><code>R/jabr_fetch.R</code></a></small>
-    <div class="hidden name"><code>jabr_fetch.Rd</code></div>
+      <h1>Articles</h1>
     </div>
 
-    <div class="ref-description">
-    <p>Download and parse the dataset available at Open Data Jawa Barat into R.</p>
+    <div class="section ">
+      <h3>All vignettes</h3>
+      <p class="section-desc"></p>
+
+      <ul>
+        <li><a href="jabar_disaster.html">Prevalence of Disaster in Jawa Barat</a></li>
+      </ul>
     </div>
-
-    <pre class="usage"><span class='fu'>jabr_fetch</span>(<span class='no'>x</span>, <span class='kw'>keep_title</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>as</span> <span class='kw'>=</span> <span class='st'>"table"</span>)</pre>
-
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>x</th>
-      <td><p>The dataset list (output from <code>jabr_list_dataset()</code>). It support single row (single data) and multiple rows (multiple data).</p></td>
-    </tr>
-    <tr>
-      <th>keep_title</th>
-      <td><p>Whether to keep the dataset title in result. If the result is a table, the title is saved in "title" column. If the result is a list, the title is saved as list name.</p></td>
-    </tr>
-    <tr>
-      <th>as</th>
-      <td><p>Applicable if <code>x</code> has multiple rows. In <code>as = "table"</code> the fetched datasets will be saved in "dataset" column with list-column type where you can run <code>unnest()</code> afterwards. Otherwise the fetched datasets will be saved as list.</p></td>
-    </tr>
-    </table>
-
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>A tibble or list of tibble.</p>
-
-  </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-    </ul>
-
   </div>
 </div>
 

@@ -17,4 +17,9 @@ jabr_district
 \description{
 A list of district area (Kota/Kabupaten) in Jawa Barat.
 }
+\examples{
+library(jabr)
+
+jabr_district
+}
 \keyword{datasets}

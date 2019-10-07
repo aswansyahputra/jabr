@@ -44,8 +44,9 @@ pdrb_adhk <-
 
 pdrb_adhk
 
-# You can then run `tidyr::unnest()` to expand the dataset
+# You can then run `tidyr::unnest()` to expand the dataset and perform some cleaning steps
 pdrb_adhk %>% 
-  tidyr::unnest(dataset)
+  tidyr::unnest(cols = c(dataset)) %>% 
+  tidyr::extract(title, "tahun", "(\\d{4})", convert = TRUE)
 ```
 

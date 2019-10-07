@@ -85,7 +85,7 @@
 <p>This is a basic example which shows you how to solve a common problem:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(jabr)</a>
 <a class="sourceLine" id="cb2-2" title="2"></a>
-<a class="sourceLine" id="cb2-3" title="3">(x &lt;-<span class="st"> </span><span class="kw"><a href="reference/jabr_list_dataset.html">jabr_list_dataset</a></span>())</a>
+<a class="sourceLine" id="cb2-3" title="3">(x &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/pkg/jabr/man/jabr_list_dataset.html">jabr_list_dataset</a></span>())</a>
 <a class="sourceLine" id="cb2-4" title="4"><span class="co">#&gt; # A tibble: 1,565 x 4</span></a>
 <a class="sourceLine" id="cb2-5" title="5"><span class="co">#&gt;    title              provider           last_updated url                  </span></a>
 <a class="sourceLine" id="cb2-6" title="6"><span class="co">#&gt;    &lt;chr&gt;              &lt;chr&gt;              &lt;date&gt;       &lt;chr&gt;                </span></a>
@@ -104,7 +104,7 @@
 <a class="sourceLine" id="cb2-19" title="19">pdrb_adhk &lt;-<span class="st"> </span></a>
 <a class="sourceLine" id="cb2-20" title="20"><span class="st">  </span>x <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb2-21" title="21"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb2-22" title="22"><span class="st">  </span><span class="kw"><a href="reference/jabr_fetch.html">jabr_fetch</a></span>()</a>
+<a class="sourceLine" id="cb2-22" title="22"><span class="st">  </span><span class="kw"><a href="https://rdrr.io/pkg/jabr/man/jabr_fetch.html">jabr_fetch</a></span>()</a>
 <a class="sourceLine" id="cb2-23" title="23"></a>
 <a class="sourceLine" id="cb2-24" title="24">pdrb_adhk</a>
 <a class="sourceLine" id="cb2-25" title="25"><span class="co">#&gt; # A tibble: 5 x 2</span></a>
@@ -116,23 +116,24 @@
 <a class="sourceLine" id="cb2-31" title="31"><span class="co">#&gt; 4 PDRB ADHK di Provinsi Jawa Barat Tahun 2016 &lt;df[,5] [27 × 5]&gt;</span></a>
 <a class="sourceLine" id="cb2-32" title="32"><span class="co">#&gt; 5 PDRB ADHK di Provinsi Jawa Barat Tahun 2017 &lt;df[,5] [27 × 5]&gt;</span></a>
 <a class="sourceLine" id="cb2-33" title="33"></a>
-<a class="sourceLine" id="cb2-34" title="34"><span class="co"># You can then run `tidyr::unnest()` to expand the dataset</span></a>
+<a class="sourceLine" id="cb2-34" title="34"><span class="co"># You can then run `tidyr::unnest()` to expand the dataset and perform some cleaning steps</span></a>
 <a class="sourceLine" id="cb2-35" title="35">pdrb_adhk <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb2-36" title="36"><span class="st">  </span>tidyr<span class="op">::</span><span class="kw"><a href="https://tidyr.tidyverse.org/reference/nest.html">unnest</a></span>(dataset)</a>
-<a class="sourceLine" id="cb2-37" title="37"><span class="co">#&gt; # A tibble: 135 x 6</span></a>
-<a class="sourceLine" id="cb2-38" title="38"><span class="co">#&gt;    title       provinsi  kode_kota_kabup… nama_kota_kabup… pdrb_adhk satuan</span></a>
-<a class="sourceLine" id="cb2-39" title="39"><span class="co">#&gt;    &lt;chr&gt;       &lt;fct&gt;                &lt;int&gt; &lt;fct&gt;                &lt;int&gt; &lt;fct&gt; </span></a>
-<a class="sourceLine" id="cb2-40" title="40"><span class="co">#&gt;  1 PDRB ADHK … JAWA BAR…             3204 KAB. BANDUNG         57691 MILIA…</span></a>
-<a class="sourceLine" id="cb2-41" title="41"><span class="co">#&gt;  2 PDRB ADHK … JAWA BAR…             3217 KAB. BANDUNG BA…     22937 MILIA…</span></a>
-<a class="sourceLine" id="cb2-42" title="42"><span class="co">#&gt;  3 PDRB ADHK … JAWA BAR…             3216 KAB. BEKASI         186207 MILIA…</span></a>
-<a class="sourceLine" id="cb2-43" title="43"><span class="co">#&gt;  4 PDRB ADHK … JAWA BAR…             3201 KAB. BOGOR          110665 MILIA…</span></a>
-<a class="sourceLine" id="cb2-44" title="44"><span class="co">#&gt;  5 PDRB ADHK … JAWA BAR…             3207 KAB. CIAMIS          16027 MILIA…</span></a>
-<a class="sourceLine" id="cb2-45" title="45"><span class="co">#&gt;  6 PDRB ADHK … JAWA BAR…             3203 KAB. CIANJUR         22883 MILIA…</span></a>
-<a class="sourceLine" id="cb2-46" title="46"><span class="co">#&gt;  7 PDRB ADHK … JAWA BAR…             3209 KAB. CIREBON         25042 MILIA…</span></a>
-<a class="sourceLine" id="cb2-47" title="47"><span class="co">#&gt;  8 PDRB ADHK … JAWA BAR…             3205 KAB. GARUT           29138 MILIA…</span></a>
-<a class="sourceLine" id="cb2-48" title="48"><span class="co">#&gt;  9 PDRB ADHK … JAWA BAR…             3212 KAB. INDRAMAYU       52859 MILIA…</span></a>
-<a class="sourceLine" id="cb2-49" title="49"><span class="co">#&gt; 10 PDRB ADHK … JAWA BAR…             3215 KAB. KARAWANG       120295 MILIA…</span></a>
-<a class="sourceLine" id="cb2-50" title="50"><span class="co">#&gt; # … with 125 more rows</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-36" title="36"><span class="st">  </span>tidyr<span class="op">::</span><span class="kw"><a href="https://tidyr.tidyverse.org/reference/nest.html">unnest</a></span>(<span class="dt">cols =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(dataset)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-37" title="37"><span class="st">  </span>tidyr<span class="op">::</span><span class="kw"><a href="https://tidyr.tidyverse.org/reference/extract.html">extract</a></span>(title, <span class="st">"tahun"</span>, <span class="st">"(</span><span class="ch">\\</span><span class="st">d{4})"</span>, <span class="dt">convert =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb2-38" title="38"><span class="co">#&gt; # A tibble: 135 x 6</span></a>
+<a class="sourceLine" id="cb2-39" title="39"><span class="co">#&gt;    tahun provinsi  kode_kota_kabupat… nama_kota_kabupa… pdrb_adhk satuan   </span></a>
+<a class="sourceLine" id="cb2-40" title="40"><span class="co">#&gt;    &lt;int&gt; &lt;chr&gt;                  &lt;int&gt; &lt;chr&gt;                 &lt;int&gt; &lt;chr&gt;    </span></a>
+<a class="sourceLine" id="cb2-41" title="41"><span class="co">#&gt;  1  2013 JAWA BAR…               3204 KAB. BANDUNG          57691 MILIAR R…</span></a>
+<a class="sourceLine" id="cb2-42" title="42"><span class="co">#&gt;  2  2013 JAWA BAR…               3217 KAB. BANDUNG BAR…     22937 MILIAR R…</span></a>
+<a class="sourceLine" id="cb2-43" title="43"><span class="co">#&gt;  3  2013 JAWA BAR…               3216 KAB. BEKASI          186207 MILIAR R…</span></a>
+<a class="sourceLine" id="cb2-44" title="44"><span class="co">#&gt;  4  2013 JAWA BAR…               3201 KAB. BOGOR           110665 MILIAR R…</span></a>
+<a class="sourceLine" id="cb2-45" title="45"><span class="co">#&gt;  5  2013 JAWA BAR…               3207 KAB. CIAMIS           16027 MILIAR R…</span></a>
+<a class="sourceLine" id="cb2-46" title="46"><span class="co">#&gt;  6  2013 JAWA BAR…               3203 KAB. CIANJUR          22883 MILIAR R…</span></a>
+<a class="sourceLine" id="cb2-47" title="47"><span class="co">#&gt;  7  2013 JAWA BAR…               3209 KAB. CIREBON          25042 MILIAR R…</span></a>
+<a class="sourceLine" id="cb2-48" title="48"><span class="co">#&gt;  8  2013 JAWA BAR…               3205 KAB. GARUT            29138 MILIAR R…</span></a>
+<a class="sourceLine" id="cb2-49" title="49"><span class="co">#&gt;  9  2013 JAWA BAR…               3212 KAB. INDRAMAYU        52859 MILIAR R…</span></a>
+<a class="sourceLine" id="cb2-50" title="50"><span class="co">#&gt; 10  2013 JAWA BAR…               3215 KAB. KARAWANG        120295 MILIAR R…</span></a>
+<a class="sourceLine" id="cb2-51" title="51"><span class="co">#&gt; # … with 125 more rows</span></a></code></pre></div>
 </div>
 </div>
   </div>

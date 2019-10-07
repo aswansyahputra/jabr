@@ -9,4 +9,9 @@
 #'   \item{name_kemendagri}{Name of the area according to KEMENDAGRI}
 #'   \item{code_kemendagri}{Code of the area according to KEMENDAGRI}
 #' }
+#'
+#' @examples
+#' library(jabr)
+#'
+#' jabr_district
 "jabr_district"

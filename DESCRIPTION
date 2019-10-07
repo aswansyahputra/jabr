@@ -25,3 +25,7 @@ Imports:
 URL: https://github.com/aswansyahputra/jabr
 BugReports: https://github.com/aswansyahputra/jabr/issues
 RoxygenNote: 6.1.1
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

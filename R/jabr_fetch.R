@@ -7,10 +7,11 @@
 #' @param as Applicable if \code{x} has multiple rows. In \code{as = "table"} the fetched datasets will be saved in "dataset" column with list-column type where you can run \code{unnest()} afterwards. Otherwise the fetched datasets will be saved as list.
 #'
 #' @importFrom rlang arg_match .data
-#' @importFrom dplyr mutate select
+#' @importFrom dplyr mutate mutate_if select
 #' @importFrom ckanr ckan_fetch
 #' @importFrom tidyr unnest
 #' @importFrom tibble deframe as_tibble
+#' @importFrom purrr map
 #'
 #' @return A tibble or list of tibble.
 #'
@@ -32,7 +33,7 @@ jabr_fetch <- function(x, keep_title = TRUE, as = "table") {
 
   res <-
     x %>%
-    mutate(dataset = lapply(url, ckan_fetch)) %>%
+    mutate(dataset = map(url, ckan_fetch)) %>%
     select(-.data$provider, -.data$last_updated, -url)
 
   if (!keep_title) {
@@ -40,14 +41,22 @@ jabr_fetch <- function(x, keep_title = TRUE, as = "table") {
   }
 
   if (NROW(res) == 1) {
-    res <- unnest(res, c("dataset"))
+    res <-
+      res %>%
+      unnest(c(.data$dataset)) %>%
+      mutate_if(is.factor, as.character)
   } else if (NROW(res) >= 1) {
-    res
+    res <-
+      res %>%
+      mutate(
+        dataset = map(.data$dataset, ~ mutate_if(.x, is.factor, as.character))
+      )
+
     if (as == "list") {
       res <-
         res %>%
         deframe() %>%
-        lapply(as_tibble)
+        map(as_tibble)
     }
   }
 

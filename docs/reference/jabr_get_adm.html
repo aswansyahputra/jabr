@@ -69,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">jabr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -133,12 +133,45 @@
 
     <p>A tibble.</p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>jabr</span>)
+
+<span class='no'>jabar_district</span></div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 27 x 4</span><span>
+#&gt;    name_bps    code_bps name_kemendagri  code_kemendagri
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #555555;'> 1</span><span> Bogor       3201     Kab. Bogor       32.01          
+#&gt; </span><span style='color: #555555;'> 2</span><span> Sukabumi    3202     Kab. Sukabumi    32.02          
+#&gt; </span><span style='color: #555555;'> 3</span><span> Cianjur     3203     Kab. Cianjur     32.03          
+#&gt; </span><span style='color: #555555;'> 4</span><span> Bandung     3204     Kab. Bandung     32.04          
+#&gt; </span><span style='color: #555555;'> 5</span><span> Garut       3205     Kab. Garut       32.05          
+#&gt; </span><span style='color: #555555;'> 6</span><span> Tasikmalaya 3206     Kab. Tasikmalaya 32.06          
+#&gt; </span><span style='color: #555555;'> 7</span><span> Ciamis      3207     Kab. Ciamis      32.07          
+#&gt; </span><span style='color: #555555;'> 8</span><span> Kuningan    3208     Kab. Kuningan    32.08          
+#&gt; </span><span style='color: #555555;'> 9</span><span> Cirebon     3209     Kab. Cirebon     32.09          
+#&gt; </span><span style='color: #555555;'>10</span><span> Majalengka  3210     Kab. Majalengka  32.10          
+#&gt; </span><span style='color: #555555;'># … with 17 more rows</span><span></div><div class='input'>
+<span class='fu'>jabr_get_adm</span>(<span class='kw'>level</span> <span class='kw'>=</span> <span class='st'>"subdistrict"</span>, <span class='kw'>code_bps</span> <span class='kw'>=</span> <span class='st'>"3209"</span>)</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 40 x 4</span><span>
+#&gt;    name_bps      code_bps name_kemendagri code_kemendagri
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>           </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #555555;'> 1</span><span> WALED         3209010  WALED           32.09.01       
+#&gt; </span><span style='color: #555555;'> 2</span><span> PASALEMAN     3209011  PASALEMAN       32.09.32       
+#&gt; </span><span style='color: #555555;'> 3</span><span> CILEDUG       3209020  CILEDUG         32.09.02       
+#&gt; </span><span style='color: #555555;'> 4</span><span> PABUARAN      3209021  PABUARAN        32.09.33       
+#&gt; </span><span style='color: #555555;'> 5</span><span> LOSARI        3209030  LOSARI          32.09.03       
+#&gt; </span><span style='color: #555555;'> 6</span><span> PABEDILAN     3209031  PABEDILAN       32.09.04       
+#&gt; </span><span style='color: #555555;'> 7</span><span> BABAKAN       3209040  BABAKAN         32.09.05       
+#&gt; </span><span style='color: #555555;'> 8</span><span> GEBANG        3209041  GEBANG          32.09.30       
+#&gt; </span><span style='color: #555555;'> 9</span><span> KARANGSEMBUNG 3209050  KARANGSEMBUNG   32.09.06       
+#&gt; </span><span style='color: #555555;'>10</span><span> KARANGWARENG  3209051  KARANGWARENG    32.09.34       
+#&gt; </span><span style='color: #555555;'># … with 30 more rows</span><span></div><div class='input'>
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>

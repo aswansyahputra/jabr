@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • jabr</title>
+<title>Basemap of Jawa Barat — jabar_basemap • jabr</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,9 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Basemap of Jawa Barat — jabar_basemap" />
+<meta property="og:description" content="Map of district area (Kota/Kabupaten) in Jawa Barat." />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -54,7 +56,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -101,72 +103,37 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Basemap of Jawa Barat</h1>
+    <small class="dont-index">Source: <a href='https://github.com/aswansyahputra/jabr/blob/master/R/data.R'><code>R/data.R</code></a></small>
+    <div class="hidden name"><code>jabar_basemap.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Map of district area (Kota/Kabupaten) in Jawa Barat.</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='no'>jabar_basemap</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="jabar_basemap.html">jabar_basemap</a></code> </p>
-        </td>
-        <td><p>Basemap of Jawa Barat</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="jabar_district.html">jabar_district</a></code> </p>
-        </td>
-        <td><p>Administrative area of Jawa Barat</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="jabr_browse.html">jabr_browse()</a></code> </p>
-        </td>
-        <td><p>Browse Open Data Jawa Barat</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="jabr_fetch.html">jabr_fetch()</a></code> </p>
-        </td>
-        <td><p>Fetch dataset</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="jabr_get_adm.html">jabr_get_adm()</a></code> </p>
-        </td>
-        <td><p>Get administrative area</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="jabr_list_dataset.html">jabr_list_dataset()</a></code> </p>
-        </td>
-        <td><p>List Dataset</p></td>
-      </tr>
-    </tbody>
-    </table>
+
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <p>An sf object with 27 features and 4 fields.</p><dl class='dl-horizontal'>
+  <dt>name_bps</dt><dd><p>Name of the area according to BPS</p></dd>
+  <dt>code_bps</dt><dd><p>Code of the area according to BPS</p></dd>
+  <dt>name_kemendagri</dt><dd><p>Name of the area according to KEMENDAGRI</p></dd>
+  <dt>code_kemendagri</dt><dd><p>Code of the area according to KEMENDAGRI</p></dd>
+
+</dl>
+
   </div>
-
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#format">Format</a></li>
     </ul>
+
   </div>
 </div>
 

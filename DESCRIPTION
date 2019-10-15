@@ -1,31 +1,34 @@
 Package: jabr
-Title: Jabr - Open Data Jawa Barat
-Version: 0.0.1
+Title: Open Data Jawa Barat
+Version: 0.1.0
 Authors@R: 
     person(given = "Muhammad Aswan",
            family = "Syahputra",
            role = c("aut", "cre"),
            email = "muhammadaswansyahputra@gmail.com")
-Description: Easily access and fetch data from Open Data Jawa Barat into R.
+Description: Easily access and fetch data from Open Data Jawa
+    Barat into R.
 License: MIT + file LICENSE
-Encoding: UTF-8
-LazyData: true
-Depends: R (>= 2.10)
-Imports: 
-    ckanr,
-    rappdirs,
-    dplyr,
-    tidyr,
-    tibble,
-    magrittr,
-    rlang,
-    glue,
-    httr,
-    purrr
 URL: https://github.com/aswansyahputra/jabr
 BugReports: https://github.com/aswansyahputra/jabr/issues
-RoxygenNote: 6.1.1
+Depends: 
+    R (>= 2.10)
+Imports: 
+    ckanr,
+    dplyr,
+    glue,
+    httr,
+    magrittr,
+    purrr,
+    rappdirs,
+    rlang,
+    tibble,
+    tidyr
 Suggests: 
     knitr,
     rmarkdown
-VignetteBuilder: knitr
+VignetteBuilder: 
+    knitr
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1

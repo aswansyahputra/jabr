@@ -14,6 +14,13 @@
 #'
 #' @return A tibble.
 #'
+#' @examples
+#' library(jabr)
+#'
+#' jabar_district
+#'
+#' jabr_get_adm(level = "subdistrict", code_bps = "3209")
+#'
 #' @export
 jabr_get_adm <- function(level, code_bps) {
   level <- arg_match(level, values = c("subdistrict", "village"))

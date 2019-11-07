@@ -18,10 +18,12 @@ A tibble.
 List the administrative area of Jawa Barat.
 }
 \examples{
+\donttest{
 library(jabr)
 
 jabar_district
 
 jabr_get_adm(level = "subdistrict", code_bps = "3209")
+}
 
 }

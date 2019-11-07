@@ -15,3 +15,11 @@ A tibble.
 \description{
 List the dataset available at Open Data Jawa Barat.
 }
+\examples{
+\donttest{
+library(jabr)
+
+jabr_list_dataset()
+
+}
+}

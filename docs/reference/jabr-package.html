@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>List Dataset — jabr_list_dataset • jabr</title>
+<title>jabr: Easy Access for West Java Data — jabr-package • jabr</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,9 @@
 
 
 
-<meta property="og:title" content="List Dataset — jabr_list_dataset" />
-<meta property="og:description" content="List the dataset available at Open Data Jawa Barat." />
+<meta property="og:title" content="jabr: Easy Access for West Java Data — jabr-package" />
+<meta property="og:description" content="An R interface to browse, access, and fetch data
+    about West Java." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -105,59 +106,36 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>List Dataset</h1>
-    <small class="dont-index">Source: <a href='https://github.com/aswansyahputra/jabr/blob/master/R/jabr_list_dataset.R'><code>R/jabr_list_dataset.R</code></a></small>
-    <div class="hidden name"><code>jabr_list_dataset.Rd</code></div>
+    <h1>jabr: Easy Access for West Java Data</h1>
+    <small class="dont-index">Source: <a href='https://github.com/aswansyahputra/jabr/blob/master/R/jabr-package.R'><code>R/jabr-package.R</code></a></small>
+    <div class="hidden name"><code>jabr-package.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>List the dataset available at Open Data Jawa Barat.</p>
+    <p>An R interface to browse, access, and fetch data
+    about West Java.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>jabr_list_dataset</span>(<span class='kw'>update</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>update</th>
-      <td><p>(logical) Whether to update the dataset list.</p></td>
-    </tr>
-    </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p>A tibble.</p>
+    <div class='dont-index'><p>Useful links:</p><ul>
+<li><p><a href='https://github.com/aswansyahputra/jabr'>https://github.com/aswansyahputra/jabr</a></p></li>
+<li><p>Report bugs at <a href='https://github.com/aswansyahputra/jabr/issues'>https://github.com/aswansyahputra/jabr/issues</a></p></li>
+</ul>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>jabr</span>)
+</div>
 
-<span class='fu'>jabr_list_dataset</span>()</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 1,508 x 5</span><span>
-#&gt;    id     title                provider        last_modified url                
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>           </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>              
-#&gt; </span><span style='color: #555555;'> 1</span><span> 43f28… Jumlah Kepala Kelua… Dinas Kependud… 2019-09-25    https://data.jabar…
-#&gt; </span><span style='color: #555555;'> 2</span><span> fe59a… Jumlah Kepala Kelua… Dinas Kependud… 2019-09-25    https://data.jabar…
-#&gt; </span><span style='color: #555555;'> 3</span><span> fde46… Jumlah Kepala Kelua… Dinas Kependud… 2019-09-25    https://data.jabar…
-#&gt; </span><span style='color: #555555;'> 4</span><span> 772d6… Jumlah Kepala Kelua… Dinas Kependud… 2019-09-25    https://data.jabar…
-#&gt; </span><span style='color: #555555;'> 5</span><span> 3a51a… Jumlah Aplikasi Yan… Dinas Komunika… 2019-10-23    https://data.jabar…
-#&gt; </span><span style='color: #555555;'> 6</span><span> ef3af… Indeks Keamanan Inf… Dinas Komunika… 2019-10-23    https://data.jabar…
-#&gt; </span><span style='color: #555555;'> 7</span><span> 67304… Jumlah Jaringan Kom… Dinas Komunika… 2019-10-23    https://data.jabar…
-#&gt; </span><span style='color: #555555;'> 8</span><span> 9fe01… Jumlah Kepala Kelua… Dinas Kependud… 2019-10-23    https://data.jabar…
-#&gt; </span><span style='color: #555555;'> 9</span><span> 25b09… Jumlah Kepala Kelua… Dinas Kependud… 2019-10-23    https://data.jabar…
-#&gt; </span><span style='color: #555555;'>10</span><span> 1c81a… Jumlah Kepala Kelua… Dinas Kependud… 2019-10-23    https://data.jabar…
-#&gt; </span><span style='color: #555555;'># … with 1,498 more rows</span><span></div><div class='input'>
-# }
-</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#examples">Examples</a></li>
+      <li><a href="#see-also">See also</a></li>
     </ul>
 
+    <h2>Author</h2>
+    <p><strong>Maintainer</strong>: Muhammad Aswan Syahputra <a href='mailto:muhammadaswansyahputra@gmail.com'>muhammadaswansyahputra@gmail.com</a></p>
   </div>
 </div>
 

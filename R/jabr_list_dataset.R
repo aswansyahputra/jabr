@@ -7,11 +7,20 @@
 #' @importFrom rlang .data
 #' @importFrom rappdirs user_cache_dir
 #' @importFrom ckanr package_list_current
-#' @importFrom dplyr select transmute
+#' @importFrom dplyr select transmute na_if
 #' @importFrom tidyr unnest
+#' @importFrom stringr str_extract str_replace_all str_remove_all
+#' @importFrom tools toTitleCase
 #'
 #' @return A tibble.
 #'
+#' @examples
+#' \donttest{
+#' library(jabr)
+#'
+#' jabr_list_dataset()
+#'
+#' }
 #' @export
 jabr_list_dataset <- function(update = FALSE) {
   jabr_cache_dir <- user_cache_dir("jabr")
@@ -19,12 +28,12 @@ jabr_list_dataset <- function(update = FALSE) {
   if (!file.exists(file.path(jabr_cache_dir, "jabr_data.rda")) |
     update) {
     if (!dir.exists(jabr_cache_dir)) {
-      message("Preparing the database, please wait...")
+      message("Preparing the database, please wait a moment...")
       dir.create(jabr_cache_dir)
     }
 
     if (update) {
-      message("Updating the database, please wait...")
+      message("Updating the database, please wait a moment...")
     }
 
     jabr_data <-
@@ -36,9 +45,15 @@ jabr_list_dataset <- function(update = FALSE) {
       select(.data$resources, .data$author) %>%
       unnest(.data$resources) %>%
       transmute(
-        title = .data$name,
-        provider = .data$author,
-        last_updated = as.Date(.data$cache_last_updated),
+        id = str_extract(.data$id, "^[:alnum:]{8}"),
+        title = str_replace_all(.data$name, "\\-", " ") %>%
+          str_remove_all("\\.csv$") %>%
+          toTitleCase(),
+        provider = .data$author %>%
+          tolower() %>%
+          toTitleCase(),
+        provider = na_if(.data$provider, ""),
+        last_modified = as.Date(.data$last_modified),
         url
       )
 

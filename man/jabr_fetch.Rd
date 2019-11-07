@@ -4,10 +4,10 @@
 \alias{jabr_fetch}
 \title{Fetch dataset}
 \usage{
-jabr_fetch(x, keep_title = TRUE, as = "table")
+jabr_fetch(id, keep_title = TRUE, as = "table")
 }
 \arguments{
-\item{x}{The dataset list (output from \code{jabr_list_dataset()}). It support single row (single data) and multiple rows (multiple data).}
+\item{id}{The character id of dataset. It accepts single id or multiple ids. Non-matched id(s) will be ignored.}
 
 \item{keep_title}{Whether to keep the dataset title in result. If the result is a table, the title is saved in "title" column. If the result is a list, the title is saved as list name.}
 
@@ -18,4 +18,18 @@ A tibble or list of tibble.
 }
 \description{
 Download and parse the dataset available at Open Data Jawa Barat into R.
+}
+\examples{
+\donttest{
+library(jabr)
+
+(x <- jabr_list_dataset())
+
+
+# for example, we want to fetch data about number of application available in west java.
+# The id of this data is "3a51a670".
+jabr_fetch("3a51a670")
+
+}
+
 }

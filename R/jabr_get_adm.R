@@ -15,11 +15,13 @@
 #' @return A tibble.
 #'
 #' @examples
+#' \donttest{
 #' library(jabr)
 #'
 #' jabar_district
 #'
 #' jabr_get_adm(level = "subdistrict", code_bps = "3209")
+#' }
 #'
 #' @export
 jabr_get_adm <- function(level, code_bps) {

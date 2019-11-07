@@ -28,25 +28,62 @@ You can install the released version of jabr from [GitHub](https://github.com/as
 # install.packages("remotes")
 remotes::install_github("aswansyahputra/jabr")
 ```
-## Example
+## Examples
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
+### Fetch single dataset
+```{r single-dataset}
 library(jabr)
 
 (x <- jabr_list_dataset())
 
-pdrb_adhk <- 
-  x %>% 
-  dplyr::slice(1:5) %>% 
-  jabr_fetch()
+# suppose that we want to get dataset about "Jumlah Desa Siaga Di Provinsi Jawa Barat 2018".
+# Id of this data is "88ef59c5".
 
-pdrb_adhk
+jabr_fetch("88ef59c5")
 
-# You can then run `tidyr::unnest()` to expand the dataset and perform some cleaning steps
-pdrb_adhk %>% 
-  tidyr::unnest(cols = c(dataset)) %>% 
+## optionally, you can also remove the 'title' column
+desa_siaga <- jabr_fetch("88ef59c5", keep_title = FALSE)
+desa_siaga
+```
+
+### Fetch multiple datasets
+```{r multiple-datasets}
+library(jabr)
+library(dplyr)
+library(stringr)
+library(tidyr)
+
+(x <- jabr_list_dataset())
+
+
+# suppose that we want to get the datasets about "Angka Harapan Hidup".
+# There are several datasets available in the list (one dataset per observation year).
+
+## Step 1. List the ids of datasets that fall within same category.
+## We can check and write the ids manualy, or using filtering technique.
+ids <- 
+  x %>%
+  dplyr::filter(stringr::str_detect(title, "Angka Harapan Hidup")) %>% 
+  dplyr::pull(id)
+ids
+
+## Step 2. Fetch the datasets using the ids.
+ahh_jabar_raw <- 
+  jabr_fetch(id = ids)
+ahh_jabar_raw
+
+## Step 3. Expand/unnest the datasets.
+ahh_jabar <- 
+  ahh_jabar_raw %>% 
+  tidyr::unnest(dataset)
+ahh_jabar
+
+## Step 4. (optional) Perform some data cleaning.
+ahh_jabar <- 
+  ahh_jabar %>% 
   tidyr::extract(title, "tahun", "(\\d{4})", convert = TRUE)
+ahh_jabar
 ```
 

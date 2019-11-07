@@ -1,13 +1,13 @@
 Package: jabr
-Title: Open Data Jawa Barat
+Title: Easy Access for West Java Data
 Version: 0.1.0
 Authors@R: 
     person(given = "Muhammad Aswan",
            family = "Syahputra",
            role = c("aut", "cre"),
            email = "muhammadaswansyahputra@gmail.com")
-Description: Easily access and fetch data from Open Data Jawa
-    Barat into R.
+Description: An R interface to browse, access, and fetch data
+    about West Java.
 License: MIT + file LICENSE
 URL: https://github.com/aswansyahputra/jabr
 BugReports: https://github.com/aswansyahputra/jabr/issues
@@ -22,13 +22,11 @@ Imports:
     purrr,
     rappdirs,
     rlang,
+    stringr,
     tibble,
-    tidyr
-Suggests: 
-    knitr,
-    rmarkdown
-VignetteBuilder: 
-    knitr
+    tidyr,
+    tools,
+    utils
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1

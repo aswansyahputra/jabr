@@ -114,14 +114,14 @@
     <p>Download and parse the dataset available at Open Data Jawa Barat into R.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>jabr_fetch</span>(<span class='no'>x</span>, <span class='kw'>keep_title</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>as</span> <span class='kw'>=</span> <span class='st'>"table"</span>)</pre>
+    <pre class="usage"><span class='fu'>jabr_fetch</span>(<span class='no'>id</span>, <span class='kw'>keep_title</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>as</span> <span class='kw'>=</span> <span class='st'>"table"</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>The dataset list (output from <code><a href='jabr_list_dataset.html'>jabr_list_dataset()</a></code>). It support single row (single data) and multiple rows (multiple data).</p></td>
+      <th>id</th>
+      <td><p>The character id of dataset. It accepts single id or multiple ids. Non-matched id(s) will be ignored.</p></td>
     </tr>
     <tr>
       <th>keep_title</th>
@@ -137,12 +137,51 @@
 
     <p>A tibble or list of tibble.</p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>jabr</span>)
+
+(<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='jabr_list_dataset.html'>jabr_list_dataset</a></span>())</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 1,508 x 5</span><span>
+#&gt;    id     title                provider        last_modified url                
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>           </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>              
+#&gt; </span><span style='color: #555555;'> 1</span><span> 43f28… Jumlah Kepala Kelua… Dinas Kependud… 2019-09-25    https://data.jabar…
+#&gt; </span><span style='color: #555555;'> 2</span><span> fe59a… Jumlah Kepala Kelua… Dinas Kependud… 2019-09-25    https://data.jabar…
+#&gt; </span><span style='color: #555555;'> 3</span><span> fde46… Jumlah Kepala Kelua… Dinas Kependud… 2019-09-25    https://data.jabar…
+#&gt; </span><span style='color: #555555;'> 4</span><span> 772d6… Jumlah Kepala Kelua… Dinas Kependud… 2019-09-25    https://data.jabar…
+#&gt; </span><span style='color: #555555;'> 5</span><span> 3a51a… Jumlah Aplikasi Yan… Dinas Komunika… 2019-10-23    https://data.jabar…
+#&gt; </span><span style='color: #555555;'> 6</span><span> ef3af… Indeks Keamanan Inf… Dinas Komunika… 2019-10-23    https://data.jabar…
+#&gt; </span><span style='color: #555555;'> 7</span><span> 67304… Jumlah Jaringan Kom… Dinas Komunika… 2019-10-23    https://data.jabar…
+#&gt; </span><span style='color: #555555;'> 8</span><span> 9fe01… Jumlah Kepala Kelua… Dinas Kependud… 2019-10-23    https://data.jabar…
+#&gt; </span><span style='color: #555555;'> 9</span><span> 25b09… Jumlah Kepala Kelua… Dinas Kependud… 2019-10-23    https://data.jabar…
+#&gt; </span><span style='color: #555555;'>10</span><span> 1c81a… Jumlah Kepala Kelua… Dinas Kependud… 2019-10-23    https://data.jabar…
+#&gt; </span><span style='color: #555555;'># … with 1,498 more rows</span><span></div><div class='input'>
+
+<span class='co'># for example, we want to fetch data about number of application available in west java.</span>
+<span class='co'># The id of this data is "3a51a670".</span>
+<span class='fu'>jabr_fetch</span>(<span class='st'>"3a51a670"</span>)</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 27 x 6</span><span>
+#&gt;    title                provinsi  kode_kota_kabup… kota_kabupaten  jumlah satuan
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> 
+#&gt; </span><span style='color: #555555;'> 1</span><span> Jumlah Aplikasi Yan… JAWA BAR…             </span><span style='text-decoration: underline;'>3</span><span>204 KAB. BANDUNG       152 APLIK…
+#&gt; </span><span style='color: #555555;'> 2</span><span> Jumlah Aplikasi Yan… JAWA BAR…             </span><span style='text-decoration: underline;'>3</span><span>217 KAB. BANDUNG B…     15 APLIK…
+#&gt; </span><span style='color: #555555;'> 3</span><span> Jumlah Aplikasi Yan… JAWA BAR…             </span><span style='text-decoration: underline;'>3</span><span>216 KAB. BEKASI         12 APLIK…
+#&gt; </span><span style='color: #555555;'> 4</span><span> Jumlah Aplikasi Yan… JAWA BAR…             </span><span style='text-decoration: underline;'>3</span><span>201 KAB. BOGOR          58 APLIK…
+#&gt; </span><span style='color: #555555;'> 5</span><span> Jumlah Aplikasi Yan… JAWA BAR…             </span><span style='text-decoration: underline;'>3</span><span>207 KAB. CIAMIS         </span><span style='color: #BB0000;'>NA</span><span> APLIK…
+#&gt; </span><span style='color: #555555;'> 6</span><span> Jumlah Aplikasi Yan… JAWA BAR…             </span><span style='text-decoration: underline;'>3</span><span>203 KAB. CIANJUR        27 APLIK…
+#&gt; </span><span style='color: #555555;'> 7</span><span> Jumlah Aplikasi Yan… JAWA BAR…             </span><span style='text-decoration: underline;'>3</span><span>209 KAB. CIREBON        27 APLIK…
+#&gt; </span><span style='color: #555555;'> 8</span><span> Jumlah Aplikasi Yan… JAWA BAR…             </span><span style='text-decoration: underline;'>3</span><span>205 KAB. GARUT          17 APLIK…
+#&gt; </span><span style='color: #555555;'> 9</span><span> Jumlah Aplikasi Yan… JAWA BAR…             </span><span style='text-decoration: underline;'>3</span><span>212 KAB. INDRAMAYU      26 APLIK…
+#&gt; </span><span style='color: #555555;'>10</span><span> Jumlah Aplikasi Yan… JAWA BAR…             </span><span style='text-decoration: underline;'>3</span><span>215 KAB. KARAWANG       65 APLIK…
+#&gt; </span><span style='color: #555555;'># … with 17 more rows</span><span></div><div class='input'>
+# }
+
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>

@@ -6,7 +6,7 @@
 \alias{jabr-package}
 \title{jabr: Easy Access for West Java Data}
 \description{
-An R interface to browse, access, and fetch data
+Interface to browse, access, and fetch data
     about West Java.
 }
 \seealso{

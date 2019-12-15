@@ -26,7 +26,6 @@
 #' # for example, we want to fetch data about number of application available in west java.
 #' # The id of this data is "3a51a670".
 #' jabr_fetch("3a51a670")
-#'
 #' }
 #'
 #' @export
@@ -40,8 +39,8 @@ jabr_fetch <- function(id, keep_title = TRUE, as = "table") {
   jabr_cache_dir <- user_cache_dir("jabr")
   load(file = file.path(jabr_cache_dir, "jabr_data.rda"))
 
-  id_ok <- keep(id, ~is.element(.x, jabr_data$id))
-  id_not_ok <- keep(id, ~!is.element(.x, jabr_data$id))
+  id_ok <- keep(id, ~ is.element(.x, jabr_data$id))
+  id_not_ok <- keep(id, ~ !is.element(.x, jabr_data$id))
 
   if (length(id_not_ok) == length(id)) {
     stop("Can't locate the supplied id(s), please re-check it.", call. = FALSE)
@@ -59,10 +58,12 @@ jabr_fetch <- function(id, keep_title = TRUE, as = "table") {
     jabr_data %>%
     dplyr::filter(.data$id %in% id_ok) %>%
     mutate(dataset = map(url, ckan_fetch)) %>%
-    select(-.data$id,
-           -.data$provider,
-           -.data$last_modified,
-           -.data$url)
+    select(
+      -.data$id,
+      -.data$provider,
+      -.data$last_modified,
+      -.data$url
+    )
 
   if (!keep_title) {
     res <- select(res, -.data$title)

@@ -22,12 +22,19 @@ The goal of jabr is to browse, list, and fetch dataset from Open Data Jawa Barat
 
 ## Installation
 
-You can install the released version of jabr from [GitHub](https://github.com/aswansyahputra/jabr) with:
+You can install the released version of jabr from [CRAN](https://CRAN.R-project.org) with:
 
-``` r
-# install.packages("remotes")
-remotes::install_github("aswansyahputra/jabr")
+```r
+install.packages("jabr")
 ```
+
+And the development version from [GitHub](https://github.com/) with:
+
+```r
+# install.packages("devtools")
+devtools::install_github("aswansyahputra/jabr")
+```
+
 ## Examples
 
 This is a basic example which shows you how to solve a common problem:

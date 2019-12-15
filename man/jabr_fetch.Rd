@@ -29,7 +29,6 @@ library(jabr)
 # for example, we want to fetch data about number of application available in west java.
 # The id of this data is "3a51a670".
 jabr_fetch("3a51a670")
-
 }
 
 }

@@ -20,6 +20,5 @@ List the dataset available at Open Data Jawa Barat.
 library(jabr)
 
 jabr_list_dataset()
-
 }
 }

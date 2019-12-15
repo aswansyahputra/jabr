@@ -1,6 +1,6 @@
 Package: jabr
 Title: Easy Access for West Java Data
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: 
     person(given = "Muhammad Aswan",
            family = "Syahputra",

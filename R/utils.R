@@ -15,6 +15,7 @@ print.id <- function(x, ...) {
   invisible(x)
 }
 
+#' @importFrom pillar type_sum
 type_sum.id <- function(x) {
   "id"
 }

@@ -11,7 +11,7 @@ jabr_fetch(id, keep_title = TRUE, as = "table")
 
 \item{keep_title}{Whether to keep the dataset title in result. If the result is a table, the title is saved in "title" column. If the result is a list, the title is saved as list name.}
 
-\item{as}{Applicable if \code{x} has multiple rows. In \code{as = "table"} the fetched datasets will be saved in "dataset" column with list-column type where you can run \code{unnest()} afterwards. Otherwise the fetched datasets will be saved as list.}
+\item{as}{Applicable for multiple \code{id}. If \code{as = "table"}, the fetched datasets will be saved in "dataset" column with list-column type where you can run \code{tidyr::unnest()} afterwards. Otherwise the fetched datasets will be saved as list.}
 }
 \value{
 A tibble or list of tibble.

@@ -56,7 +56,7 @@ desa_siaga
 ```
 
 ### Fetch multiple datasets
-```{r multiple-datasets}
+```{r multiple-datasets-1}
 library(jabr)
 library(dplyr)
 library(stringr)
@@ -94,3 +94,34 @@ ahh_jabar <-
 ahh_jabar
 ```
 
+### Fetch multiple datasets (simple ways)
+
+We will replicate the previous section, but by using a new and straighforward function.
+
+```{r multiple-datasets-2}
+library(jabr)
+library(tidyr)
+
+(x <- jabr_list_dataset())
+
+
+# suppose that we want to get the datasets about "Angka Harapan Hidup".
+# There are several datasets available in the list (one dataset per observation year). Those dataset falls within the same group_id, so we can use jabr_fetch_group() to fetch them.
+
+## Step 1. Fetch the datasets using group_id ("ffa4dc21").
+ahh_jabar_raw <- 
+  jabr_fetch_group(group_id = "ffa4dc21")
+ahh_jabar_raw
+
+## Step 2. Expand/unnest the datasets.
+ahh_jabar <- 
+  ahh_jabar_raw %>% 
+  tidyr::unnest(dataset)
+ahh_jabar
+
+## Step 3. (optional) Perform some data cleaning.
+ahh_jabar <- 
+  ahh_jabar %>% 
+  tidyr::extract(title, "tahun", "(\\d{4})", convert = TRUE)
+ahh_jabar
+```

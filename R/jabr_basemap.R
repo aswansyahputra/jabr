@@ -10,7 +10,7 @@
 #' @importFrom ckanr ckan_fetch
 #' @importFrom dplyr transmute
 #'
-#' @return A tibble.
+#' @return An \code{sf} object.
 #'
 #' @examples
 #' \donttest{

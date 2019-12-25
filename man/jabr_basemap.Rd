@@ -10,7 +10,7 @@ jabr_basemap(level)
 \item{level}{Level of administrative division. Valid values are "district" for Kota/Kabupaten, "subdistrict" for Kecamatan and "village" for Desa/Kelurahan.}
 }
 \value{
-A tibble.
+An \code{sf} object.
 }
 \description{
 List basemap of the administrative area in Jawa Barat.
